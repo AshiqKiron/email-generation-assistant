@@ -1,7 +1,7 @@
 # Final Report: Email Generation Assistant Assessment
 
 ## 1. Prompt Template Used
-The assistant uses an advanced prompt combining **Role-Playing**, **Few-Shot Learning**, and **Chain-of-Thought (CoT)** reasoning.
+The assistant uses an advanced prompt combining **Role-Playing**, **Few-Shot Learning**, and **Internal Reasoning/Self-Check**.
 
 **System Persona:**
 "You are an expert professional email writer with 15+ years of experience in corporate communications."
@@ -9,12 +9,13 @@ The assistant uses an advanced prompt combining **Role-Playing**, **Few-Shot Lea
 **Few-Shot Examples:**
 The prompt includes two complete examples (one formal, one casual) to demonstrate subject line formatting, fact integration, and tone adherence.
 
-**Chain-of-Thought Guidance:**
-Before writing, the model is instructed to:
-1. Analyze the Intent.
-2. Review Key Facts for natural integration.
-3. Select vocabulary matching the Tone.
-4. Plan the Structure (Subject, Greeting, Body, Closing).
+**Internal Reasoning / Self-Check Guidance:**
+Instead of exposing the reasoning process, the model is instructed to silently verify:
+1. **Fact Check:** Are ALL key facts included accurately?
+2. **Tone Check:** Does the language strictly match the requested tone?
+3. **Structure Check:** Is there a clear subject line, greeting, body, and closing?
+
+The model returns **only** the final professional email, ensuring a clean, production-ready output without leaking prompt logic.
 
 ## 2. Custom Metrics Definitions
 
