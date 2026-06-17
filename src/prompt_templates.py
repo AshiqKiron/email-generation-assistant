@@ -1,5 +1,5 @@
 """
-Advanced prompt templates using Role-Playing, Few-Shot Learning, and Chain-of-Thought.
+Advanced prompt templates using Role-Playing, Few-Shot Learning, and Internal Reasoning.
 """
 
 ROLE_PLAYING_TEMPLATE = """
@@ -56,13 +56,13 @@ Sincerely,
 [Your Name]
 """
 
-CHAIN_OF_THOUGHT_GUIDANCE = """
-Before writing the email, think through these steps:
-1. Analyze the Intent - What is the primary goal?
-2. Review Key Facts - How can they be woven in naturally?
-3. Consider the Tone - What words match this tone?
-4. Plan the Structure - Subject line, greeting, body, closing
-5. Write and Refine - Draft the email ensuring all facts are included.
+INTERNAL_REASONING_GUIDANCE = """
+Before generating the final email, perform an internal self-check:
+1. Fact Check: Are ALL key facts from the input included accurately?
+2. Tone Check: Does the vocabulary and sentence structure match the requested tone?
+3. Structure Check: Is there a clear subject line, greeting, body, and professional closing?
+
+Do NOT output your reasoning steps. Return ONLY the final, polished email ready to be sent.
 """
 
 def build_complete_prompt(intent: str, key_facts: list, tone: str) -> str:
@@ -73,7 +73,7 @@ def build_complete_prompt(intent: str, key_facts: list, tone: str) -> str:
 
 {FEW_SHOT_EXAMPLES}
 
-{CHAIN_OF_THOUGHT_GUIDANCE}
+{INTERNAL_REASONING_GUIDANCE}
 
 ---
 
