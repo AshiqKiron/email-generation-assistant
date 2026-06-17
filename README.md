@@ -97,9 +97,10 @@ After running the assessment, the following files are generated in the `data/res
 The assessment compares two distinct models available on the Groq platform:
 
 *   **Model A: `llama-3.3-70b-versatile`**
-    *   A state-of-the-art open-weight model known for high reasoning capabilities and nuanced language understanding.
+    *   A state-of-the-art open-weight model known for high reasoning capabilities and nuanced language understanding. Model A uses Llama 3.3 70B through Groq.
 *   **Model B: `mixtral-8x7b-32768`**
-    *   A sparse mixture-of-experts model known for speed and efficiency, though sometimes less nuanced than larger dense models.
+    *   A sparse mixture-of-experts model known for speed and efficiency, though sometimes less nuanced than larger dense models. Model B uses Mixtral 8x7B through Groq.
+    *   Both models use the same 10 scenarios and same 3 metrics.
 
 **Analysis Goal:**
 The comparative analysis (found in the Final Report) determines which model better balances **Fact Recall**, **Tone Accuracy**, and **Structural Integrity**. The results help identify the most cost-effective and reliable model for production deployment.
