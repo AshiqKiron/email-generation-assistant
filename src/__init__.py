@@ -1,0 +1,3 @@
+"""
+Email Generation Assistant Package
+"""
