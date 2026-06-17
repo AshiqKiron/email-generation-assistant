@@ -4,6 +4,7 @@ Evaluation pipeline for comparing models.
 import json
 import csv
 import os
+import numpy as np # Added this import
 from tqdm import tqdm
 from src.email_generator import EmailGenerator
 from src.test_scenarios import TEST_SCENARIOS
