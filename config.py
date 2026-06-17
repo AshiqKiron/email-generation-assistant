@@ -4,7 +4,6 @@ Configuration settings for the Email Generation Assistant.
 import os
 
 # API Configuration
-# Reads from GitHub Secrets (via Actions) or local environment variable
 GROQ_API_KEY = os.getenv("GROQ_API_KEY", "")
 
 if not GROQ_API_KEY:
@@ -13,7 +12,7 @@ if not GROQ_API_KEY:
 # Model Configuration
 MODEL_A = {
     "provider": "groq",
-    "model_name": "llama-3.1-70b-versatile",
+    "model_name": "llama-3.3-70b-versatile", # Updated to latest stable model
     "api_key": GROQ_API_KEY,
     "temperature": 0.2,
     "max_tokens": 1000
