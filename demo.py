@@ -6,7 +6,7 @@ from config import MODEL_A
 
 def main():
     print("--- Email Generation Assistant Demo ---")
-    print("Using Model:", MODEL_A['model_name'])
+    print(f"Using Model: {MODEL_A['model_name']}")
     
     intent = input("\nEnter Intent (e.g., Follow up after meeting): ")
     facts_input = input("Enter Key Facts (separated by semicolons): ")
