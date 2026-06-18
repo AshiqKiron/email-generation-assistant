@@ -83,7 +83,7 @@ Push code to the `main` branch or manually trigger the workflow from the **Actio
 
 ## 📂 Output Files
 After running the assessment, the following files are generated in the `data/results/` directory:
-Final report is available at data/final_report.md.
+Final report is available at data/final_report.pdf.
 
 | File Name | Description |
 | :--- | :--- |
