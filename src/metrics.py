@@ -2,18 +2,18 @@
 Custom evaluation metrics for email generation.
 """
 import numpy as np
-from groq import Groq
 import os
-import json
+from groq import Groq
 
 class CustomMetrics:
     def __init__(self):
-        # Use Groq for the Judge as well
+        # Initialize Groq client for the Judge metric
         self.judge_client = Groq(api_key=os.getenv("GROQ_API_KEY"))
         self.judge_model = "llama-3.3-70b-versatile"
 
     @staticmethod
     def fact_recall_integration_score(generated_email: str, key_facts: list) -> float:
+        """Metric 1: Fact Recall & Integration Score (FRIS)"""
         if not key_facts: return 1.0
         facts_found = 0
         total_facts = len(key_facts)
@@ -27,6 +27,7 @@ class CustomMetrics:
 
     @staticmethod
     def tone_consistency_index(generated_email: str, desired_tone: str) -> float:
+        """Metric 2: Tone Consistency Index (TCI)"""
         tone_keywords = {
             "formal": ["dear", "sincerely", "regards", "please", "kindly"],
             "casual": ["hi", "hey", "thanks", "cheers", "best"],
@@ -49,6 +50,7 @@ class CustomMetrics:
 
     @staticmethod
     def structural_quality_score(generated_email: str) -> float:
+        """Metric 3: Structural Quality Score (SQS)"""
         score = 0.0
         if "subject:" in generated_email.lower(): score += 30
         greetings = ["dear", "hi", "hello", "good morning"]
