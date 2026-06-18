@@ -5,6 +5,14 @@ This project implements a robust **Email Generation Assistant** prototype design
 
 Beyond generation, this project features a comprehensive **Evaluation Pipeline** that uses custom-defined metrics to measure performance and compares two different LLM strategies to determine the optimal approach for production use.
 
+## Quick Links
+
+- Final Report: `data/final_report.pdf`
+- Evaluation CSV: `data/results/comparison_report.csv`
+- Comprehensive Report: `data/results/comprehensive_report.json`
+- Test Scenarios: `src/test_scenarios.py`
+- Prompt Template: `src/prompt_templates.py`
+
 ---
 
 ## 🧠 Prompting Strategy
@@ -102,6 +110,22 @@ The assessment compares two distinct models available on the Groq platform:
 *   **Model B: `mixtral-8x7b-32768`**
     *   A sparse mixture-of-experts model known for speed and efficiency, though sometimes less nuanced than larger dense models. Model B uses Mixtral 8x7B through Groq.
     *   Both models use the same 10 scenarios and same 3 metrics.
+ 
+## Known Limitations
+
+- The current tone metric uses keyword matching, so it may under-score emails that match tone semantically but do not use expected keywords.
+- Fact recall uses keyword overlap, so paraphrased facts may be missed.
+- The evaluation set contains 10 scenarios, which is enough for this assessment but not enough for production-level validation.
+- The system does not yet include human review or guardrails before sending emails.
+
+## Production Next Steps
+
+1. Add structured JSON output validation.
+2. Add LLM-as-a-judge evaluation for semantic quality.
+3. Track latency and cost per model.
+4. Add human approval before sending emails.
+5. Expand test scenarios to cover sales, support, hiring, billing, and executive communication.
+6. Add regression tests so future prompt changes do not reduce quality.
 
 **Analysis Goal:**
 The comparative analysis (found in the Final Report) determines which model better balances **Fact Recall**, **Tone Accuracy**, and **Structural Integrity**. The results help identify the most cost-effective and reliable model for production deployment.
