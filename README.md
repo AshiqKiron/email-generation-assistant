@@ -12,7 +12,7 @@ To maximize output quality and reliability, this assistant utilizes an **Advance
 
 1.  **Role-Playing:** The model is assigned the persona of an "Expert Professional Email Writer" with 15+ years of corporate communication experience. This primes the model to adopt a professional tone and structure.
 2.  **Few-Shot Learning:** The prompt includes two high-quality example emails (one formal, one casual) to demonstrate the expected format, subject line style, and fact integration.
-3.  **Chain-of-Thought (CoT):** The model is guided through a 5-step reasoning process (Analyze Intent → Review Facts → Consider Tone → Plan Structure → Write) before generating the final output. This reduces hallucinations and ensures all key facts are included.
+3.  **Internal Self-Check:** The model is instructed to silently verify fact coverage, tone match, and structure before returning only the final email.
 
 ---
 
