@@ -1,5 +1,5 @@
 """
-Advanced prompt templates using Role-Playing, Few-Shot Learning, and Internal Reasoning.
+Advanced prompt templates using Role-Playing, Few-Shot Learning, and Internal Self-Check.
 """
 
 ROLE_PLAYING_TEMPLATE = """
@@ -56,13 +56,13 @@ Sincerely,
 [Your Name]
 """
 
-INTERNAL_REASONING_GUIDANCE = """
-Before generating the final email, perform an internal self-check:
-1. Fact Check: Are ALL key facts from the input included accurately?
-2. Tone Check: Does the vocabulary and sentence structure match the requested tone?
-3. Structure Check: Is there a clear subject line, greeting, body, and professional closing?
+SELF_CHECK_GUIDANCE = """
+Before finalizing, silently verify that:
+1. All key facts are included accurately.
+2. The tone matches the user's request.
+3. The email has a proper structure (Subject, Greeting, Body, Closing).
 
-Do NOT output your reasoning steps. Return ONLY the final, polished email ready to be sent.
+Return ONLY the final email. Do not output your verification steps.
 """
 
 def build_complete_prompt(intent: str, key_facts: list, tone: str) -> str:
@@ -73,7 +73,7 @@ def build_complete_prompt(intent: str, key_facts: list, tone: str) -> str:
 
 {FEW_SHOT_EXAMPLES}
 
-{INTERNAL_REASONING_GUIDANCE}
+{SELF_CHECK_GUIDANCE}
 
 ---
 
