@@ -1,0 +1,16 @@
+{
+  "model_a_averages": {
+    "Average_Fact_Recall_Integration_Score": 97.5,
+    "Average_Tone_Consistency_Index": 36.0,
+    "Average_Structural_Quality_Score": 100.0,
+    "Overall_Average": 77.83
+  },
+  "model_b_averages": {
+    "Average_Fact_Recall_Integration_Score": 7.5,
+    "Average_Tone_Consistency_Index": 4.0,
+    "Average_Structural_Quality_Score": 20.0,
+    "Overall_Average": 10.5
+  },
+  "model_a_name": "llama-3.3-70b-versatile",
+  "model_b_name": "mixtral-8x7b-32768"
+}
